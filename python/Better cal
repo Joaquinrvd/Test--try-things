@@ -1,0 +1,43 @@
+# 1. Create a class called Calculator
+class Calculator:
+    def __init__(self):
+        pass
+
+    # 2. Create functions for each mathematical operation
+    def add(self, a, b):
+        return a + b
+
+    def subtract(self, a, b):
+        return a - b
+
+    def multiply(self, a, b):
+        return a * b
+
+    def divide(self, a, b):
+        if b != 0:
+            return a / b
+        else:
+            return "Cannot divide by zero"
+
+# 3. Create an instance of your calculator class
+my_calculator = Calculator()
+
+# 4. Ask the user for input
+try:
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+
+    # 5. Call each function with user input and store the result
+    sum_result = my_calculator.add(num1, num2)
+    difference_result = my_calculator.subtract(num1, num2)
+    product_result = my_calculator.multiply(num1, num2)
+    quotient_result = my_calculator.divide(num1, num2)
+
+    # 6. Print all results
+    print("Addition:", sum_result)
+    print("Subtraction:", difference_result)
+    print("Multiplication:", product_result)
+    print("Division:", quotient_result)
+
+except ValueError:
+    print("Please enter valid numbers.")
