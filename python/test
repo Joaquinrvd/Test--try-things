@@ -1,0 +1,55 @@
+from Class import Collection
+
+def print_menu():
+    print("\nMenu:")
+    print("1. Display all movies")
+    print("2. Display all video games")
+    print("3. Add a movie")
+    print("4. Add a video game")
+    print("5. Remove a movie")
+    print("6. Remove a video game")
+    print("7. Set favorite movie")
+    print("8. Set favorite video game")
+    print("9. Display favorites")
+    print("0. Exit")
+
+def main():
+    collection = Collection([], [])
+
+    while True:
+        print_menu()
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            collection.display_movies()
+        elif choice == "2":
+            collection.display_games()
+        elif choice == "3":
+            movie = input("Enter movie to add: ")
+            collection.add_movie(movie)
+        elif choice == "4":
+            game = input("Enter video game to add: ")
+            collection.add_game(game)
+        elif choice == "5":
+            movie = input("Enter movie to remove: ")
+            collection.remove_movie(movie)
+        elif choice == "6":
+            game = input("Enter video game to remove: ")
+            collection.remove_game(game)
+        elif choice == "7":
+            movie = input("Enter movie to set as favorite: ")
+            collection.set_favorite_movie(movie)
+        elif choice == "8":
+            game = input("Enter video game to set as favorite: ")
+            collection.set_favorite_game(game)
+        elif choice == "9":
+            collection.display_favorites()
+        elif choice == "0":
+            collection.display_favorites()
+            print("")
+            break
+        else:
+            print("Invalid choice, try again.")
+
+if __name__ == "__main__":
+    main()

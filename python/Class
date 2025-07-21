@@ -1,0 +1,80 @@
+# 1. Create a class to represent a video game or a movie collection 
+# 2. Create a constructer method _init_()
+# 3. Create a list for the vidoe games and moives each
+# 4. Create a indtsnce variable for the user's favorite movie and video game respectivly 
+# 5. Create a following functions for your class
+# - A function to display all the movies 
+# - A function to display all the video games
+# - A function to add a movie/video game
+# - A function to remove a movie/video game
+# - A function to select a favorite video game and or movie 
+# 6. Create a seporate tester.py file to test your code
+
+class Collection:
+
+    def __init__(self, movieList, gameList,):
+        self.movieList = []
+        self.gameList = []
+        self.favGame = ""
+        self.favMovie = ""
+        
+        self.movieList = movieList
+        self.gameList = gameList
+
+        self.favoriteGames = []
+
+    def display_movies(self):
+        if self.movieList:
+            print("Movies in your collection:")
+            for movie in self.movieList:
+                print(f"- {movie}")
+        else:
+            print("No movies in your collection.")
+
+    def display_games(self):
+        if self.gameList:
+            print("Video games in your collection:")
+            for game in self.gameList:
+                print(f"- {game}")
+        else:
+            print("No video games in your collection.")
+
+    def add_movie(self, movie):
+        self.movieList.append(movie)
+        print(f"'{movie}' added to your movie collection.")
+
+    def add_game(self, game):
+        self.gameList.append(game)
+        print(f"'{game}' added to your game collection.")
+
+    def remove_movie(self, movie):
+        if movie in self.movieList:
+            self.movieList.remove(movie)
+            print(f"'{movie}' removed from your movie collection.")
+        else:
+            print(f"'{movie}' not found in your movie collection.")
+
+    def remove_game(self, game):
+        if game in self.gameList:
+            self.gameList.remove(game)
+            print(f"'{game}' removed from your game collection.")
+        else:
+            print(f"'{game}' not found in your game collection.")
+
+    def set_favorite_movie(self, movie):
+        if movie in self.movieList:
+            self.favMovie = movie
+            print(f"'{movie}' set as your favorite movie.")
+        else:
+            print(f"'{movie}' not in your movie collection.")
+
+    def set_favorite_game(self, game):
+        if game in self.gameList:
+            self.favGame = game
+            print(f"'{game}' set as your favorite video game.")
+        else:
+            print(f"'{game}' not in your game collection.")
+
+    def display_favorites(self):
+        print(f"Favorite Movie: {self.favMovie if self.favMovie else 'None'}")
+        print(f"Favorite Game: {self.favGame if self.favGame else 'None'}")
